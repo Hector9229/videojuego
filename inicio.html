@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub - Portal de Videojuegos</title>
+    <style>
+        :root {
+            --black: #000000;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #2d2d2d;
+            --yellow: #FFD700;
+            --light-yellow: #FFF200;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Rajdhani', 'Arial', sans-serif;
+            background-color: var(--black);
+            color: var(--yellow);
+            min-height: 100vh;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap');
+        
+        .hero {
+            background: url('https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background-size: cover;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            border-bottom: 5px solid var(--yellow);
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--yellow);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+            font-weight: 700;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--light-yellow);
+            letter-spacing: 2px;
+        }
+        
+        .btn-explore {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--yellow);
+            padding: 16px 45px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 3px solid var(--yellow);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            margin-top: 1rem;
+            font-family: 'Rajdhani', sans-serif;
+        }
+        
+        .btn-explore:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(255, 215, 0, 0.8);
+            background-color: rgba(255, 215, 0, 0.1);
+            letter-spacing: 3px;
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 3rem;
+            background-color: var(--dark-gray);
+        }
+        
+        .game-card {
+            background: var(--medium-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid var(--yellow);
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+        }
+        
+        .game-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--yellow);
+        }
+        
+        .game-info {
+            padding: 1.5rem;
+        }
+        
+        .game-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--light-yellow);
+            font-weight: 600;
+        }
+        
+        .game-desc {
+            color: #c0c0c0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--black);
+            border-top: 3px solid var(--yellow);
+        }
+        
+        .footer-text {
+            color: var(--yellow);
+            letter-spacing: 1px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .games-grid {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+            
+            .btn-explore {
+                padding: 14px 35px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>GameHub</h1>
+            <p class="tagline">Descubre los juegos más emocionantes del momento</p>
+            <button class="btn-explore" onclick="window.location.href='index.html'">
+                Explorar Videojuegos
+            </button>
+        </div>
+    </div>
+    
+    <div class="games-grid">
+        <div class="game-card">
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cyber Arena" class="game-img">
+            <div class="game-info">
+                <h3 class="game-title">Cyber Arena</h3>
+                <p class="game-desc">Combates futuristas en arenas digitales con gráficos de última generación.</p>
+            </div>
+        </div>
+        
+        <div class="game-card">
+            <img src="https://images.unsplash.com/photo-1551103782-8ab07afd45c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Space Odyssey" class="game-img">
+            <div class="game-info">
+                <h3 class="game-title">Space Odyssey</h3>
+                <p class="game-desc">Explora galaxias desconocidas en este MMORPG de ciencia ficción.</p>
+            </div>
+        </div>
+        
+        <div class="game-card">
+            <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Neon Apocalypse" class="game-img">
+            <div class="game-info">
+                <h3 class="game-title">Neon Apocalypse</h3>
+                <p class="game-desc">Supervive en una ciudad distópica llena de peligros y misterios.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p class="footer-text">&copy; 2023 GameHub | Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
